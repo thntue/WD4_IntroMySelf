@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hồ Sơ Cá Nhân | thntue - Portfolio & Giới Thiệu Bản Thân</title>
+  <meta name="description" content="Trang web giới thiệu bản thân, kỹ năng và các dự án của thntue được xây dựng bằng HTML, CSS và JavaScript thuần.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dark">
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="navbar-header" id="header">
+    <div class="container navbar-container">
+      <a href="#hero" class="logo">
+        <span class="logo-bracket">&lt;</span><span class="logo-text">thntue</span><span class="logo-dot">.dev</span><span class="logo-bracket"> /&gt;</span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#hero" class="nav-link active"><i class="fa-solid fa-house"></i> Trang chủ</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link"><i class="fa-solid fa-user"></i> Giới thiệu</a></li>
+          <li class="nav-item"><a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i> Kỹ năng</a></li>
+          <li class="nav-item"><a href="#projects" class="nav-link"><i class="fa-solid fa-laptop-code"></i> Dự án</a></li>
+          <li class="nav-item"><a href="#timeline" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Học vấn</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link"><i class="fa-solid fa-paper-plane"></i> Liên hệ</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Chuyển chế độ sáng/tối" title="Đổi giao diện Sáng / Tối">
+          <i class="fa-solid fa-sun icon-sun"></i>
+          <i class="fa-solid fa-moon icon-moon"></i>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-toggle" class="mobile-toggle-btn" aria-label="Mở menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="hero-bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+      </div>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span>Sẵn sàng cho cơ hội mới & học hỏi</span>
+          </div>
+          <h1 class="hero-title">
+            Xin chào! Tôi là <br>
+            <span class="gradient-text">Tuệ (thntue)</span>
+          </h1>
+          <h2 class="hero-subtitle">
+            Tôi là <span id="typed-text" class="typed-text"></span><span class="typing-cursor">|</span>
+          </h2>
+          <p class="hero-description">
+            Đam mê xây dựng các giao diện web hiện đại, tối ưu trải nghiệm người dùng với các tiêu chuẩn sạch, đẹp và chuẩn responsive. Không ngừng tìm tòi và mở rộng tri thức về công nghệ mỗi ngày!
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fa-solid fa-rocket"></i> Khám phá dự án
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <i class="fa-regular fa-comment-dots"></i> Liên hệ với tôi
+            </a>
+            <button id="btn-download-cv" class="btn btn-outline" title="Tải CV tóm tắt">
+              <i class="fa-solid fa-file-arrow-down"></i> Tải CV
+            </button>
+          </div>
+          <div class="hero-socials">
+            <span class="social-label">Kết nối với tôi:</span>
+            <div class="social-icons">
+              <a href="https://github.com/thntue" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="mailto:contact.thntue@gmail.com" class="social-link" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="avatar-wrapper">
+            <div class="avatar-ring"></div>
+            <div class="avatar-card">
+              <div class="avatar-inner">
+                <i class="fa-solid fa-user-astronaut avatar-icon"></i>
+                <div class="avatar-glow"></div>
+              </div>
+            </div>
+            <!-- Floating Tech Badges -->
+            <div class="floating-badge badge-html" title="HTML5">
+              <i class="fa-brands fa-html5"></i>
+              <span>HTML5</span>
+            </div>
+            <div class="floating-badge badge-css" title="CSS3">
+              <i class="fa-brands fa-css3-alt"></i>
+              <span>CSS3</span>
+            </div>
+            <div class="floating-badge badge-js" title="JavaScript">
+              <i class="fa-brands fa-square-js"></i>
+              <span>JavaScript</span>
+            </div>
+            <div class="floating-badge badge-git" title="Git & GitHub">
+              <i class="fa-brands fa-git-alt"></i>
+              <span>Git</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Bar -->
+      <div class="container stats-container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-folder-open"></i></div>
+            <div class="stat-info">
+              <span class="stat-number" data-target="12">0</span><span class="stat-plus">+</span>
+              <p class="stat-label">Dự án hoàn thành</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-code-commit"></i></div>
+            <div class="stat-info">
+              <span class="stat-number" data-target="150">0</span><span class="stat-plus">+</span>
+              <p class="stat-label">Commits mã nguồn</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-mug-hot"></i></div>
+            <div class="stat-info">
+              <span class="stat-number" data-target="280">0</span><span class="stat-plus">+</span>
+              <p class="stat-label">Tách cà phê lập trình</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-heart"></i></div>
+            <div class="stat-info">
+              <span class="stat-number" data-target="100">0</span><span class="stat-plus">%</span>
+              <p class="stat-label">Nhiệt huyết & Đam mê</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-user"></i> Giới thiệu</span>
+          <h2 class="section-title">Câu Chuyện & Bản Thân Tôi</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card-info">
+            <div class="about-avatar-box">
+              <div class="avatar-initials">TUỆ</div>
+              <h3>Tuệ (thntue)</h3>
+              <p class="about-role">Frontend / Web Enthusiast</p>
+            </div>
+            <ul class="personal-details-list">
+              <li>
+                <span class="detail-label"><i class="fa-solid fa-location-dot"></i> Nơi sống:</span>
+                <span class="detail-value">Việt Nam</span>
+              </li>
+              <li>
+                <span class="detail-label"><i class="fa-solid fa-graduation-cap"></i> Chuyên ngành:</span>
+                <span class="detail-value">Công nghệ Thông tin / Phần mềm</span>
+              </li>
+              <li>
+                <span class="detail-label"><i class="fa-solid fa-envelope"></i> Email:</span>
+                <span class="detail-value">thntue.work@gmail.com</span>
+              </li>
+              <li>
+                <span class="detail-label"><i class="fa-solid fa-language"></i> Ngoại ngữ:</span>
+                <span class="detail-value">Tiếng Việt, Tiếng Anh</span>
+              </li>
+              <li>
+                <span class="detail-label"><i class="fa-solid fa-circle-check text-success"></i> Trạng thái:</span>
+                <span class="detail-value status-badge">Đang sẵn sàng nhận dự án</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="about-card-text">
+            <h3>Chào bạn, rất vui được đón tiếp bạn ghé thăm! 👋</h3>
+            <p>
+              Tôi là một sinh viên/lập trình viên trẻ đam mê công nghệ thông tin và phát triển giao diện người dùng (Frontend Development). Tôi yêu thích sự sáng tạo khi chuyển đổi những ý tưởng, thiết kế từ bản vẽ thành những trang web sống động, mượt mà và tương tác cao.
+            </p>
+            <p>
+              Đối với tôi, lập trình không chỉ là viết ra các đoạn mã mà còn là giải quyết vấn đề, tối ưu hóa tốc độ và mang đến trải nghiệm trực quan dễ chịu nhất cho người dùng.
+            </p>
+
+            <div class="about-highlights-grid">
+              <div class="highlight-item">
+                <div class="highlight-icon"><i class="fa-solid fa-bullseye"></i></div>
+                <div>
+                  <h4>Mục tiêu sự nghiệp</h4>
+                  <p>Trở thành một Frontend Engineer vững tay nghề, làm chủ các công nghệ web hiện đại và tham gia xây dựng các sản phẩm thực tế quy mô lớn.</p>
+                </div>
+              </div>
+
+              <div class="highlight-item">
+                <div class="highlight-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                <div>
+                  <h4>Tinh thần học hỏi</h4>
+                  <p>Luôn kiên trì, không ngại thử thách với các vấn đề kỹ thuật mới và liên tục cập nhật xu hướng công nghệ trên thế giới.</p>
+                </div>
+              </div>
+
+              <div class="highlight-item">
+                <div class="highlight-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+                <div>
+                  <h4>Phương châm sống</h4>
+                  <p><em>"Clean code, intuitive design, and continuous improvement"</em> — Viết mã sạch, thiết kế trực quan và không ngừng hoàn thiện.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-code"></i> Kỹ năng</span>
+          <h2 class="section-title">Năng Lực Chuyên Môn</h2>
+          <p class="section-subtitle">Các công nghệ, ngôn ngữ và công cụ tôi sử dụng để xây dựng sản phẩm</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <!-- Skill Category Filter Buttons -->
+        <div class="filter-btn-group" id="skills-filter">
+          <button class="filter-btn active" data-filter="all">Tất cả</button>
+          <button class="filter-btn" data-filter="frontend">Frontend Web</button>
+          <button class="filter-btn" data-filter="tools">Công cụ & Git</button>
+          <button class="filter-btn" data-filter="soft">Kỹ năng mềm</button>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid" id="skills-grid">
+          <!-- Skill: HTML5 -->
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-card-top">
+              <div class="skill-icon icon-html"><i class="fa-brands fa-html5"></i></div>
+              <div class="skill-meta">
+                <h4>HTML5 & Semantic Web</h4>
+                <span class="skill-percent">95%</span>
+              </div>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 95%;"></div>
+            </div>
+            <p class="skill-desc">Cấu trúc web chuẩn SEO, Accessibility (a11y), các thẻ ngữ nghĩa semantic và Canvas cơ bản.</p>
+          </div>
+
+          <!-- Skill: CSS3 -->
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-card-top">
+              <div class="skill-icon icon-css"><i class="fa-brands fa-css3-alt"></i></div>
+              <div class="skill-meta">
+                <h4>CSS3 & Responsive Design</h4>
+                <span class="skill-percent">90%</span>
+              </div>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 90%;"></div>
+            </div>
+            <p class="skill-desc">Flexbox, CSS Grid, Custom Properties (variables), Media Queries, Keyframe Animations.</p>
+          </div>
+
+          <!-- Skill: JavaScript -->
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-card-top">
+              <div class="skill-icon icon-js"><i class="fa-brands fa-square-js"></i></div>
+              <div class="skill-meta">
+                <h4>JavaScript (ES6+)</h4>
+                <span class="skill-percent">85%</span>
+              </div>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 85%;"></div>
+            </div>
+            <p class="skill-desc">DOM Manipulation, Event Handling, Promises & Async/Await, Fetch API, LocalStorage.</p>
+          </div>
+
+          <!-- Skill: Git & GitHub -->
+          <div class="skill-card" data-category="tools">
+            <div class="skill-card-top">
+              <div class="skill-icon icon-git"><i class="fa-brands fa-git-alt"></i></div>
+              <div class="skill-meta">
+                <h4>Git & GitHub</h4>
+                <span class="skill-percent">80%</span>
+              </div>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 80%;"></div>
+            </div>
+            <p class="skill-desc">Quản lý phiên bản mã nguồn, commit chuẩn, phân nhánh branch, GitHub Pages deployment.</p>
+          </div>
+
+          <!-- Skill: UI/UX & Responsive -->
+          <div class="skill-card" data-category="tools">
+            <div class="skill-card-top">
+              <div class="skill-icon icon-figma"><i class="fa-brands fa-figma"></i></div>
+              <div class="skill-meta">
+                <h4>Figma & UI/UX Thinking</h4>
+                <span class="skill-percent">75%</span>
+              </div>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 75%;"></div>
+            </div>
+            <p class="skill-desc">Đọc và hiện thực bản vẽ thiết kế, phân cấp thị giác (visual hierarchy), phối màu và trải nghiệm người dùng.</p>
+          </div>
+
+          <!-- Skill: Problem Solving -->
+          <div class="skill-card" data-category="soft">
+            <div class="skill-card-top">
+              <div class="skill-icon icon-soft"><i class="fa-solid fa-puzzle-piece"></i></div>
+              <div class="skill-meta">
+                <h4>Giải quyết vấn đề (Problem Solving)</h4>
+                <span class="skill-percent">90%</span>
+              </div>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 90%;"></div>
+            </div>
+            <p class="skill-desc">Tư duy phân tích lỗi logic, kỹ năng tra cứu tài liệu và gỡ lỗi (debugging DevTools).</p>
+          </div>
+
+          <!-- Skill: Teamwork & Communication -->
+          <div class="skill-card" data-category="soft">
+            <div class="skill-card-top">
+              <div class="skill-icon icon-team"><i class="fa-solid fa-users"></i></div>
+              <div class="skill-meta">
+                <h4>Làm việc nhóm & Tự học</h4>
+                <span class="skill-percent">92%</span>
+              </div>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 92%;"></div>
+            </div>
+            <p class="skill-desc">Khả năng tự nghiên cứu công nghệ mới, chủ động giao tiếp và phối hợp hiệu quả trong dự án.</p>
+          </div>
+
+          <!-- Skill: Clean Code -->
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-card-top">
+              <div class="skill-icon icon-clean"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+              <div class="skill-meta">
+                <h4>Clean Code & Tối ưu hiệu năng</h4>
+                <span class="skill-percent">82%</span>
+              </div>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 82%;"></div>
+            </div>
+            <p class="skill-desc">Viết mã rõ ràng, dễ bảo trì, tối ưu tài nguyên và tốc độ tải trang.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-laptop-code"></i> Dự án</span>
+          <h2 class="section-title">Các Dự Án Nổi Bật</h2>
+          <p class="section-subtitle">Một số dự án tiêu biểu tôi đã thiết kế và lập trình</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <!-- Project Filter Buttons -->
+        <div class="filter-btn-group" id="projects-filter">
+          <button class="filter-btn active" data-filter="all">Tất cả</button>
+          <button class="filter-btn" data-filter="landing">Trang giới thiệu</button>
+          <button class="filter-btn" data-filter="app">Web App / Công cụ</button>
+          <button class="filter-btn" data-filter="interactive">Tương tác & Game</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projects-grid">
+          <!-- Project 1 -->
+          <div class="project-card" data-category="landing" data-id="1">
+            <div class="project-thumb thumb-portfolio">
+              <div class="project-overlay">
+                <button class="btn-quick-view" onclick="openProjectModal(1)">
+                  <i class="fa-solid fa-eye"></i> Xem chi tiết
+                </button>
+              </div>
+              <div class="thumb-badge">Dự án này</div>
+              <div class="thumb-mockup">
+                <i class="fa-solid fa-id-card-clip"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <h3 class="project-title">WD4_IntroMySelf - Portfolio Cá Nhân</h3>
+              <p class="project-summary">Trang web giới thiệu cá nhân hoàn chỉnh với hiệu ứng gõ chữ, chuyển đổi giao diện sáng/tối, lọc kỹ năng và gửi form liên hệ.</p>
+              <div class="project-links">
+                <button class="btn-link" onclick="openProjectModal(1)"><i class="fa-solid fa-circle-info"></i> Chi tiết</button>
+                <a href="https://github.com/thntue/WD4_IntroMySelf" target="_blank" rel="noopener noreferrer" class="btn-link"><i class="fa-brands fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card" data-category="app" data-id="2">
+            <div class="project-thumb thumb-task">
+              <div class="project-overlay">
+                <button class="btn-quick-view" onclick="openProjectModal(2)">
+                  <i class="fa-solid fa-eye"></i> Xem chi tiết
+                </button>
+              </div>
+              <div class="thumb-mockup">
+                <i class="fa-solid fa-list-check"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">JavaScript ES6</span>
+                <span class="tag">LocalStorage</span>
+                <span class="tag">CSS Grid</span>
+              </div>
+              <h3 class="project-title">TaskFlow - Quản Lý Công Việc Cá Nhân</h3>
+              <p class="project-summary">Ứng dụng theo dõi nhiệm vụ hàng ngày với khả năng kéo thả, lọc theo mức độ ưu tiên và lưu dữ liệu tự động trên trình duyệt.</p>
+              <div class="project-links">
+                <button class="btn-link" onclick="openProjectModal(2)"><i class="fa-solid fa-circle-info"></i> Chi tiết</button>
+                <a href="https://github.com/thntue" target="_blank" rel="noopener noreferrer" class="btn-link"><i class="fa-brands fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card" data-category="app" data-id="3">
+            <div class="project-thumb thumb-weather">
+              <div class="project-overlay">
+                <button class="btn-quick-view" onclick="openProjectModal(3)">
+                  <i class="fa-solid fa-eye"></i> Xem chi tiết
+                </button>
+              </div>
+              <div class="thumb-mockup">
+                <i class="fa-solid fa-cloud-sun-rain"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">Fetch API</span>
+                <span class="tag">Async/Await</span>
+                <span class="tag">Responsive</span>
+              </div>
+              <h3 class="project-title">WeatherWise - Dự Báo Thời Tiết Toàn Cầu</h3>
+              <p class="project-summary">Tra cứu thời tiết thời gian thực tại các thành phố trên thế giới, hiển thị độ ẩm, chỉ số UV và dự báo nhiệt độ 5 ngày tới.</p>
+              <div class="project-links">
+                <button class="btn-link" onclick="openProjectModal(3)"><i class="fa-solid fa-circle-info"></i> Chi tiết</button>
+                <a href="https://github.com/thntue" target="_blank" rel="noopener noreferrer" class="btn-link"><i class="fa-brands fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card" data-category="interactive" data-id="4">
+            <div class="project-thumb thumb-quiz">
+              <div class="project-overlay">
+                <button class="btn-quick-view" onclick="openProjectModal(4)">
+                  <i class="fa-solid fa-eye"></i> Xem chi tiết
+                </button>
+              </div>
+              <div class="thumb-mockup">
+                <i class="fa-solid fa-brain"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">Game Logic</span>
+                <span class="tag">DOM API</span>
+                <span class="tag">Sound Effects</span>
+              </div>
+              <h3 class="project-title">WebDev Quiz Battle - Trắc Nghiệm Web</h3>
+              <p class="project-summary">Trò chơi trắc nghiệm kiến thức HTML/CSS/JS có tính giờ, tính điểm số động, xếp hạng và giải thích chi tiết đáp án.</p>
+              <div class="project-links">
+                <button class="btn-link" onclick="openProjectModal(4)"><i class="fa-solid fa-circle-info"></i> Chi tiết</button>
+                <a href="https://github.com/thntue" target="_blank" rel="noopener noreferrer" class="btn-link"><i class="fa-brands fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Timeline Section -->
+    <section id="timeline" class="section timeline-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-graduation-cap"></i> Học vấn & Hành trình</span>
+          <h2 class="section-title">Chặng Đường Phát Triển</h2>
+          <p class="section-subtitle">Quá trình tích lũy kiến thức và rèn luyện kỹ năng qua từng giai đoạn</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-line"></div>
+
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"><i class="fa-solid fa-code"></i></div>
+            <div class="timeline-card">
+              <div class="timeline-date">2026 - Hiện tại</div>
+              <h3 class="timeline-title">Phát Triển Ứng Dụng Web Frontend Hiện Đại</h3>
+              <p class="timeline-subtitle">Dự án cá nhân & Thực hành chuyên sâu</p>
+              <p class="timeline-text">
+                Nâng cao kỹ năng với JavaScript hiện đại, xây dựng các ứng dụng web tương tác, rèn luyện tư duy cấu trúc mã nguồn tối ưu và tìm hiểu các thư viện frontend phổ biến.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"><i class="fa-solid fa-book-open-reader"></i></div>
+            <div class="timeline-card">
+              <div class="timeline-date">2024 - 2025</div>
+              <h3 class="timeline-title">Nền Tảng Lập Trình & Thiết Kế Web</h3>
+              <p class="timeline-subtitle">Môn học chuyên ngành & Khóa học trực tuyến</p>
+              <p class="timeline-text">
+                Nắm vững nền tảng HTML5 ngữ nghĩa, kỹ thuật tạo giao diện đáp ứng đa thiết bị (Responsive Design) với CSS3 Flexbox/Grid và lập trình điều khiển DOM với JavaScript.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"><i class="fa-solid fa-school"></i></div>
+            <div class="timeline-card">
+              <div class="timeline-date">Khởi đầu</div>
+              <h3 class="timeline-title">Bước Đầu Tiếp Cận Công Nghệ Thông Tin</h3>
+              <p class="timeline-subtitle">Khám phá đam mê</p>
+              <p class="timeline-text">
+                Bắt đầu làm quen với thuật toán cơ bản, cấu trúc dữ liệu, cách máy tính và Internet vận hành, từ đó xác định rõ con đường theo đuổi lập trình phần mềm.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Contact Section -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-paper-plane"></i> Liên hệ</span>
+          <h2 class="section-title">Gửi Lời Nhắn Đến Tôi</h2>
+          <p class="section-subtitle">Bạn có ý tưởng dự án hoặc muốn trao đổi cơ hội hợp tác? Hãy gửi tin nhắn ngay nhé!</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Info Left -->
+          <div class="contact-info-panel">
+            <div class="contact-info-header">
+              <h3>Thông Tin Liên Lạc</h3>
+              <p>Tôi luôn cởi mở đón nhận các phản hồi, đóng góp và cơ hội hợp tác thú vị.</p>
+            </div>
+
+            <div class="contact-items-list">
+              <div class="contact-item">
+                <div class="contact-item-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <h4>Địa chỉ Email</h4>
+                  <a href="mailto:contact.thntue@gmail.com">contact.thntue@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
+                <div>
+                  <h4>Số điện thoại / Zalo</h4>
+                  <a href="tel:+84987654321">(+84) 0987 654 321</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-item-icon"><i class="fa-brands fa-github"></i></div>
+                <div>
+                  <h4>GitHub Profile</h4>
+                  <a href="https://github.com/thntue" target="_blank" rel="noopener noreferrer">github.com/thntue</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-item-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <h4>Địa điểm</h4>
+                  <span>Việt Nam (Hỗ trợ Remote / On-site)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-availability">
+              <span class="status-indicator"></span>
+              <span>Hiện đang sẵn sàng tham gia dự án mới</span>
+            </div>
+          </div>
+
+          <!-- Contact Form Right -->
+          <div class="contact-form-panel">
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Họ và tên <span class="required">*</span></label>
+                  <div class="input-wrapper">
+                    <i class="fa-regular fa-user form-icon"></i>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Ví dụ: Nguyễn Văn A" required>
+                  </div>
+                  <span class="error-msg" id="name-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Địa chỉ Email <span class="required">*</span></label>
+                  <div class="input-wrapper">
+                    <i class="fa-regular fa-envelope form-icon"></i>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="name@example.com" required>
+                  </div>
+                  <span class="error-msg" id="email-error"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Tiêu đề tin nhắn <span class="required">*</span></label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-tag form-icon"></i>
+                  <input type="text" id="subject" name="subject" class="form-control" placeholder="Chủ đề bạn muốn thảo luận" required>
+                </div>
+                <span class="error-msg" id="subject-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Nội dung tin nhắn <span class="required">*</span></label>
+                <div class="input-wrapper textarea-wrapper">
+                  <i class="fa-regular fa-comment-dots form-icon"></i>
+                  <textarea id="message" name="message" rows="5" class="form-control" placeholder="Hãy viết nội dung bạn muốn gửi..." required></textarea>
+                </div>
+                <span class="error-msg" id="message-error"></span>
+              </div>
+
+              <button type="submit" id="btn-submit-contact" class="btn btn-primary btn-block">
+                <span class="btn-text"><i class="fa-solid fa-paper-plane"></i> Gửi Tin Nhắn Ngay</span>
+                <span class="btn-spinner" style="display: none;"><i class="fa-solid fa-circle-notch fa-spin"></i> Đang gửi...</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Project Detail Modal -->
+  <div id="project-modal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="modal-title" class="modal-title">Tiêu đề dự án</h3>
+          <button class="modal-close-btn" onclick="closeProjectModal()" aria-label="Đóng cửa sổ">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="modal-banner" class="modal-banner"></div>
+          <div class="modal-info-block">
+            <h4><i class="fa-solid fa-circle-info"></i> Mô tả dự án</h4>
+            <p id="modal-description"></p>
+          </div>
+          <div class="modal-info-block">
+            <h4><i class="fa-solid fa-screwdriver-wrench"></i> Công nghệ sử dụng</h4>
+            <div id="modal-tags" class="project-tags"></div>
+          </div>
+          <div class="modal-info-block">
+            <h4><i class="fa-solid fa-star"></i> Tính năng nổi bật</h4>
+            <ul id="modal-features" class="modal-features-list"></ul>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a id="modal-repo-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <i class="fa-brands fa-github"></i> Xem mã nguồn trên GitHub
+          </a>
+          <button class="btn btn-secondary" onclick="closeProjectModal()">Đóng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Cuộn lên đầu trang" title="Lên đầu trang">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="logo">
+            <span class="logo-bracket">&lt;</span><span class="logo-text">thntue</span><span class="logo-dot">.dev</span><span class="logo-bracket"> /&gt;</span>
+          </a>
+          <p class="footer-slogan">
+            Xây dựng sản phẩm web với sự tận tâm, tinh tế và hướng đến người dùng.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h4>Điều hướng nhanh</h4>
+          <ul>
+            <li><a href="#hero">Trang chủ</a></li>
+            <li><a href="#about">Giới thiệu</a></li>
+            <li><a href="#skills">Kỹ năng</a></li>
+            <li><a href="#projects">Dự án</a></li>
+            <li><a href="#contact">Liên hệ</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Mạng xã hội</h4>
+          <ul>
+            <li><a href="https://github.com/thntue" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+            <li><a href="mailto:contact.thntue@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 <strong>thntue</strong>. Tất cả các quyền được bảo lưu. Xây dựng với <i class="fa-solid fa-heart text-danger"></i> bằng HTML, CSS & JavaScript thuần.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
